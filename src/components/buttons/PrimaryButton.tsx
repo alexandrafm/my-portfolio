@@ -11,7 +11,6 @@ export const PrimaryButton = styled.a`
   text-align: center;
   text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-top: 20px;
 
   &:hover {
     transform: translateY(-5px);

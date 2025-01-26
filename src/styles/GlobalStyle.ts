@@ -51,7 +51,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   button:hover {
-    border-color: #646cff;
+    border-color: #D06666;
   }
 
   button:focus,

@@ -24,24 +24,34 @@ const ContactLink = styled.a`
 
   img {
     height: 40px;
-    margin-bottom: 10px;
+    transition: transform 0.2s ease-in-out;
+
+    @media (max-width: 768px) {
+      height: 30px;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 `;
 
 const Contacts = () => (
-    <ContactsContainer id="contacts">
-        <h2>Contacts</h2>
-        <p>Feel free to reach out via the links below:</p>
-        <ContactLinks>
-            <ContactLink href="https://www.linkedin.com/in/alexandrafmonteiro/" target="_blank" aria-label="LinkedIn">
-                <img src="/assets/contacts/linkedin.png" alt="LinkedIn" />
-            </ContactLink>
-            {/* TODO: colocar email */}
-            <ContactLink href="https://github.com/alexandrafm/my-portfolio" target="_blank" aria-label="GitHub">
-                <img src="/assets/contacts/github.png" alt="GitHub" />
-            </ContactLink>
-        </ContactLinks>
-    </ContactsContainer>
+  <ContactsContainer id="contacts">
+    <h2>Contacts</h2>
+    <p>Feel free to reach out via the links below:</p>
+    <ContactLinks>
+      <ContactLink href="mailto:alexandra.techwork@gmail.com" target="_blank" aria-label="Email">
+        <img src="/assets/contacts/gmail.svg" alt="Email" />
+      </ContactLink>
+      <ContactLink href="https://github.com/alexandrafm/my-portfolio" target="_blank" aria-label="GitHub">
+        <img src="/assets/contacts/github.svg" alt="GitHub" />
+      </ContactLink>
+      <ContactLink href="https://www.linkedin.com/in/alexandrafmonteiro/" target="_blank" aria-label="LinkedIn">
+        <img src="/assets/contacts/linkedin.png" alt="LinkedIn" />
+      </ContactLink>
+    </ContactLinks>
+  </ContactsContainer>
 );
 
 export default Contacts;

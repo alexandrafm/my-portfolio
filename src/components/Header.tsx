@@ -50,24 +50,20 @@ const NavItem = styled.a`
   }
 `;
 
-
 const HamburgerButton = styled.div`
   display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 21px;
   cursor: pointer;
-
-  span {
-    background-color: #E47676;
-    height: 4px;
-    width: 100%;
-    border-radius: 5px;
-  }
+  width: 30px;
+  height: 30px;
+  color: #E47676; 
 
   @media (max-width: 768px) {
     display: flex;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
   }
 `;
 
@@ -88,43 +84,48 @@ const MobileMenu = styled.div`
 `;
 
 const Header = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
-    return (
-        <HeaderContainer>
-            <Logo>
-                <img src="/assets/logo_transparent.png" alt="Logo" />
-            </Logo>
-            <HamburgerButton onClick={toggleMenu}>
-                <span></span>
-                <span></span>
-                <span></span>
-            </HamburgerButton>
-            <Nav>
-                <NavItems />
-            </Nav>
-            {isMenuOpen && (
-                <MobileMenu>
-                    <NavItems />
-                </MobileMenu>
-            )}
-        </HeaderContainer>
-    );
+  return (
+    <HeaderContainer>
+      <Logo>
+        <img src="/assets/logo_transparent.png" alt="Logo" />
+      </Logo>
+      <HamburgerButton onClick={toggleMenu}>
+        <img
+          src={isMenuOpen ? '/assets/icons/close.svg' : '/assets/icons/bars.svg'}
+          alt={isMenuOpen ? 'Close menu' : 'Open menu'}
+        />
+      </HamburgerButton>
+      <Nav>
+        <NavItems />
+      </Nav>
+      {isMenuOpen && (
+        <MobileMenu>
+          <NavItems closeMenu={toggleMenu} />
+        </MobileMenu>
+      )}
+    </HeaderContainer>
+  );
 };
 
 export default Header;
 
-const NavItems = () => {
-    return (
-        <>
-            <NavItem href="#about">About Me</NavItem>
-            <NavItem href="#skills">Skills</NavItem>
-            <NavItem href="#experience">Experience</NavItem>
-            <NavItem href="#contact">Contact</NavItem>
-        </>
-    )
+interface NavItemsProps {
+  closeMenu?: () => void;
+}
+
+const NavItems = ({ closeMenu }: NavItemsProps) => {
+  return (
+    <>
+      <NavItem href="#about" onClick={closeMenu}>About Me</NavItem>
+      <NavItem href="#skills" onClick={closeMenu}>Skills</NavItem>
+      <NavItem href="#experience" onClick={closeMenu}>Experience</NavItem>
+      <NavItem href="#contacts" onClick={closeMenu}>Contacts</NavItem>
+    </>
+  )
 }

@@ -25,6 +25,10 @@ const AboutMeContainer = styled.div`
 const TextContent = styled.div`
   flex: 1;
   max-width: 600px;
+
+  p {
+    margin-bottom: 20px;
+  }
 `;
 
 const ImageContainer = styled.div`
@@ -48,30 +52,30 @@ const StyledImage = styled.img`
 `;
 
 const AboutMe = () => (
-    <section id="about">
-        <AboutMeContainer>
-            <TextContent>
-                <Title>About Me</Title>
-                <SubTitle>Hi, I'm Alexandra!</SubTitle>
-                <p>
-                    I'm a front-end developer with over 5 years of experience crafting responsive and user-friendly websites. I love turning ideas into seamless, intuitive interfaces using React, JavaScript, TypeScript, HTML, and CSS, always keeping performance and accessibility at the heart of my work.                </p>
-                <br />
-                <p>
-                    I thrive in collaborative environments and enjoy solving complex challenges. I'm always eager to learn new technologies and techniques to enhance my skills and deliver high-quality solutions.
-                </p>
-                <PrimaryButton href="https://www.linkedin.com/in/alexandrafmonteiro/" target="_blank">
-                    Visit my LinkedIn
-                </PrimaryButton>
-            </TextContent>
+  <section id="about">
+    <AboutMeContainer>
+      <TextContent>
+        <Title>About Me</Title>
+        <SubTitle>Hi, I'm Alexandra!</SubTitle>
+        <p>
+          I'm a front-end developer with over 5 years of experience creating responsive and user-friendly websites. I love turning ideas into seamless, intuitive interfaces using React, JavaScript, TypeScript, HTML, and CSS, always keeping performance and accessibility at the heart of my work.
+        </p>
+        <p>
+          I thrive in collaborative environments and enjoy solving complex challenges. I'm always interested in learning new technologies and techniques to enhance my skills and deliver high-quality solutions.
+        </p>
+        <PrimaryButton href="https://www.linkedin.com/in/alexandrafmonteiro/" target="_blank">
+          Visit my LinkedIn
+        </PrimaryButton>
+      </TextContent>
 
-            <ImageContainer>
-                <StyledImage
-                    src="/assets/me.jpeg"
-                    alt="Me"
-                />
-            </ImageContainer>
-        </AboutMeContainer>
-    </section>
+      <ImageContainer>
+        <StyledImage
+          src="/assets/me.jpeg"
+          alt="Me"
+        />
+      </ImageContainer>
+    </AboutMeContainer>
+  </section>
 );
 
 export default AboutMe;
