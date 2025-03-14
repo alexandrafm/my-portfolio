@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { PrimaryButton } from './buttons/PrimaryButton';
 import { SubTitle, Title } from './typography/Typography';
+import { LazyImage } from './lazyImage/LazyImage';
 
 const AboutMeContainer = styled.div`
   display: flex;
@@ -43,14 +44,6 @@ const ImageContainer = styled.div`
   }
 `;
 
-const StyledImage = styled.img`
-    height: auto;
-    margin: 10px;
-    width: 100%;
-    border: 5px solid #E47676;
-    padding: 10px;
-`;
-
 const AboutMe = () => (
   <section id="about">
     <AboutMeContainer>
@@ -69,9 +62,10 @@ const AboutMe = () => (
       </TextContent>
 
       <ImageContainer>
-        <StyledImage
+        <LazyImage
           src="/assets/me.jpeg"
           alt="Me"
+          hasBorder={true}
         />
       </ImageContainer>
     </AboutMeContainer>

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Title } from './typography/Typography';
+import { LazyImage } from './lazyImage/LazyImage';
 
 const ExperienceContainer = styled.div`
   display: flex;
@@ -39,18 +40,14 @@ const ImageContainer = styled.div`
   }
 `;
 
-const StyledImage = styled.img`
-  height: auto;
-  margin: 10px;
-  width: 100%;
-  padding: 10px;
-`;
-
 const Experience = () => (
   <section id="experience">
     <ExperienceContainer>
       <ImageContainer>
-        <StyledImage src="/assets/experience.svg" alt="Experience" />
+        <LazyImage
+          src="/assets/experience.svg"
+          alt="Experience"
+        />
       </ImageContainer>
       <TextContent>
         <Title>Experience</Title>
