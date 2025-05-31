@@ -44,7 +44,7 @@ const Contacts = () => (
       <ContactLink href="mailto:alexandra.techwork@gmail.com" target="_blank" aria-label="Email">
         <img src="/assets/contacts/gmail.svg" alt="Email" />
       </ContactLink>
-      <ContactLink href="https://github.com/alexandrafm/my-portfolio" target="_blank" aria-label="GitHub">
+      <ContactLink href="https://github.com/alexandrafm" target="_blank" aria-label="GitHub">
         <img src="/assets/contacts/github.svg" alt="GitHub" />
       </ContactLink>
       <ContactLink href="https://www.linkedin.com/in/alexandrafmonteiro/" target="_blank" aria-label="LinkedIn">
